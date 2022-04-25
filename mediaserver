@@ -11,12 +11,12 @@ services:
       - /srv/HDD1/dockerConfig/Jellyfin/config:/config
       - /srv/HDD1/dockerConfig/Jellyfin/cache:/cache
       - /srv:/media
-     ports:
+    ports:
       - 8096:8096
       - 8920:8920 
     restart: unless-stopped
     
-   sonarr:
+  sonarr:
     image: lscr.io/linuxserver/sonarr
     container_name: Sonarr
     environment:
@@ -29,7 +29,7 @@ services:
       - 8989:8989
     restart: unless-stopped
 
-   radarr:
+  radarr:
      image: lscr.io/linuxserver/radarr
      container_name: Radarr
      environment:
@@ -42,7 +42,7 @@ services:
        - 7878:7878
      restart: unless-stopped
      
-    jackett:
+  jackett:
       image: lscr.io/linuxserver/jackett
       container_name: Jackett
       environment:
@@ -54,7 +54,7 @@ services:
         - 9117:9117
       restart: unless-stopped
 
-     qbittorrent:
+   qbittorrent:
       image: lscr.io/linuxserver/qbittorrent
       container_name: Qbittorrent
       environment:
