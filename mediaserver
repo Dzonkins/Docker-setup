@@ -7,6 +7,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+      - TZ=CET
     volumes:
       - /srv/HDD1/dockerConfig/Jellyfin/config:/config
       - /srv/HDD1/dockerConfig/Jellyfin/cache:/cache
@@ -22,6 +23,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
+      - TZ=CET
     volumes:
       - /srv/HDD1/dockerConfig/Sonarr:/config
       - /srv:/tv
@@ -35,6 +37,7 @@ services:
      environment:
        - PUID=1000
        - PGID=1000
+       - TZ=CET
      volumes:
        - /srv/HDD1/dockerConfig/Radarr:/config
        - /srv:/movies
@@ -48,6 +51,7 @@ services:
       environment:
         - PUID=1000
         - PGID=1000
+        - TZ=CET
       volumes:
         - /srv/HDD1/dockerConfig/Jackett:/config
       ports:
@@ -61,6 +65,7 @@ services:
         - PUID=1000
         - PGID=1000
         - WEBUI_PORT=8080
+        - TZ=CET
       volumes:
         - /srv/HDD1/dockerConfig/Qbittorrent
         :/config
