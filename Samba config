@@ -1,0 +1,8 @@
+[Storage]
+   path = /srv
+   browsable = yes
+   writeable = yes
+   guest ok = yes
+   create mask = 0755
+   force user = nikola
+   force group = nikola
