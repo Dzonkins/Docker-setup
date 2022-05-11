@@ -58,7 +58,7 @@ services:
         - 9117:9117
       restart: unless-stopped
 
-   qbittorrent:
+  qbittorrent:
       image: lscr.io/linuxserver/qbittorrent
       container_name: Qbittorrent
       environment:
@@ -67,11 +67,24 @@ services:
         - WEBUI_PORT=8080
         - TZ=CET
       volumes:
-        - /srv/HDD1/dockerConfig/Qbittorrent
-        :/config
+        - /srv/HDD1/dockerConfig/Qbittorrent:/config
         - /srv:/downloads
       ports:
         - 8080:8080
         - 6881:6881
         - 6881:6881/udp
+      restart: unless-stopped
+  bazarr:
+      image: lscr.io/linuxserver/bazarr:latest
+      container_name: bazarr
+      environment:
+        - PUID=1000
+        - PGID=1000
+        - TZ=Europe/London
+      volumes:
+        - /srv/HDD1/dockerConfig/Bazarr:/config
+        - /srv:/movies #optional
+        - /srv:/tv #optional
+      ports:
+        - 6767:6767
       restart: unless-stopped
