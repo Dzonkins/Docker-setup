@@ -80,7 +80,7 @@ services:
       environment:
         - PUID=1000
         - PGID=1000
-        - TZ=Europe/London
+        - TZ=CET
       volumes:
         - /srv/HDD1/dockerConfig/Bazarr:/config
         - /srv:/movies
